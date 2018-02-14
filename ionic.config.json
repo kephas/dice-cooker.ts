@@ -1,0 +1,8 @@
+{
+  "name": "dice-cooker",
+  "app_id": "4664b2a5",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
