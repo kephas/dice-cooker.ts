@@ -6,9 +6,13 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'home.html'
 })
 export class HomePage {
+  resultat: integer;
 
   constructor(public navCtrl: NavController) {
 
   }
 
+  lancer() {
+	this.resultat = Math.floor(Math.random() * 6) + 1;
+  }
 }
