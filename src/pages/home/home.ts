@@ -10,11 +10,16 @@ export class HomePage {
   dice: Dice;
 
   constructor(public navCtrl: NavController) {
-    this.dice = new Dice(6);
+    this.input_faces = 6;
+    this.update();
   }
 
   lancer() {
 	this.resultat = this.dice.roll();
+  }
+
+  update() {
+  this.dice = new Dice(parseInt(this.input_faces));
   }
 }
 

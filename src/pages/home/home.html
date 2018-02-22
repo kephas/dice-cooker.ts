@@ -7,6 +7,10 @@
 </ion-header>
 
 <ion-content padding>
+  <p>
+    <input [(ngModel)]="input_faces">
+    <button ion-button (click)="update()">Update</button>
+  </p>
   <button ion-button icon-end (click)="lancer()">Lancer<ion-icon name="cube"></ion-icon></button>
   <p>Résultat : {{resultat}}</p>
 </ion-content>
