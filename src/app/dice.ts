@@ -13,6 +13,6 @@ export class Sequence implements Dice {
   constructor(private elements: Dice[]) {}
 
   roll() {
-	return this.elements.reduce(function(total, dice) { return total + dice.roll() ; }, 0);
+    return this.elements.reduce(function(total, dice) { return total + dice.roll() ; }, 0);
   }
 }
