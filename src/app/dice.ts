@@ -34,3 +34,27 @@ export class Sequence implements Dice {
     return this.elements.reduce(function(total, dice) { return total + dice.roll() ; }, 0);
   }
 }
+
+class FateDice implements Dice {
+  private dice: Dice;
+
+  constructor() {
+    this.dice = new SimpleDice(3);
+  }
+
+  roll() {
+    return this.dice.roll() - 2;
+  }
+}
+
+export class FateSequence implements Dice {
+  private sequence: Sequence;
+
+  constructor() {
+    this.sequence = new Sequence([new FateDice(), new FateDice(), new FateDice(), new FateDice()]);
+  }
+
+  roll() {
+    return this.sequence.roll();
+  }
+}

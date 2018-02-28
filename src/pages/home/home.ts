@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { Dice, SimpleDice, ExplosiveDice, Sequence } from '../../app/dice';
+import { Dice, SimpleDice, ExplosiveDice, Sequence, FateSequence } from '../../app/dice';
 
 @Component({
   selector: 'page-home',
@@ -21,7 +21,7 @@ export class HomePage {
 
   update() {
 	let faces = parseInt(this.input_faces);
-	this.dice = new Sequence([new ExplosiveDice(faces), new ExplosiveDice(faces)]);
+	this.dice = new FateSequence();
   }
 }
 
