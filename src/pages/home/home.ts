@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { Sequence } from '../../app/dice';
 
 @Component({
   selector: 'page-home',
@@ -19,13 +20,16 @@ export class HomePage {
   }
 
   update() {
-  this.dice = new Dice(parseInt(this.input_faces));
+	let faces = parseInt(this.input_faces),
+	this.dice = new Sequence([new SimpleDice(faces), new SimpleDice(faces)]);
   }
 }
 
-class Dice {
+
+class SimpleDice implements Dice {
   constructor(private faces: number) {}
   roll() {
     return  Math.floor(Math.random() * this.faces) + 1;
   }
 }
+
