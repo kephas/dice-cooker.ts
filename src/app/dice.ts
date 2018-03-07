@@ -12,7 +12,7 @@ export class SimpleDice implements Dice {
 export class ExplosiveDice implements Dice {
   private dice: Dice;
 
-  constructor(private faces: numbre) {
+  constructor(private faces: number) {
     this.dice = new SimpleDice(faces);
   }
 
