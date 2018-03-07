@@ -3,6 +3,7 @@ export interface Dice {
 }
 
 export class SimpleDice implements Dice {
+  text: string;
   constructor(private faces: number) {}
   roll() {
     return  Math.floor(Math.random() * this.faces) + 1;
@@ -13,7 +14,7 @@ export class ExplosiveDice implements Dice {
   private dice: Dice;
 
   constructor(private faces: number) {
-    this.dice = new SimpleDice(faces);
+    this.dice = new SimpleDice(this.faces);
   }
 
   roll() {

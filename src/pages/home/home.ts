@@ -7,23 +7,21 @@ import { Dice, SimpleDice, ExplosiveDice, Sequence, FateSequence } from '../../a
   templateUrl: 'home.html'
 })
 export class HomePage {
-  resultat: number;
-  dice: Dice;
+  available_dice: Dice[];
+  staged_dice: Dice[];
 
   constructor(public navCtrl: NavController) {
-    this.input_faces = 6;
-    this.update();
+    this.staged_dice=[];
+    this.available_dice=[4,6,8,10,12,16,20,24,30].map(
+      faces => {let die=new SimpleDice(faces);
+        die.text=`d${faces}`;
+        return die;
+      });
   }
 
-  lancer() {
-	this.resultat = this.dice.roll();
+  stage(die:Dice){
+    this.staged_dice.push(Object.create(die));
   }
 
-  update() {
-	let faces = parseInt(this.input_faces);
-	this.dice = new FateSequence();
-  }
+
 }
-
-
-
