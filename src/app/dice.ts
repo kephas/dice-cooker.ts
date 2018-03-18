@@ -19,9 +19,9 @@ export class ExplosiveDice implements Dice {
 
   roll() {
     let result = 0;
-    let last_roll = faces;
+    let last_roll = this.faces;
 
-    while(last_roll == faces) {
+    while(last_roll == this.faces) {
       last_roll = this.dice.roll();
       result += last_roll;
     }

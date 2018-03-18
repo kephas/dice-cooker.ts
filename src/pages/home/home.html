@@ -10,5 +10,5 @@
   <h1>Available dice</h1>
   <span *ngFor="let die of available_dice"><button ion-button (click)="stage(die)">{{die.text}}</button></span>
   <hr>
-  <span *ngFor="let die of staged_dice">{{die.text}}</span>
+  <span style="width:400px;background:#F9EECF;border:2px solid black;padding: 8px;text-align:center" *ngFor="let die of staged_dice">{{die.text}}</span>
 </ion-content>
