@@ -12,5 +12,11 @@
   <hr>
   <div id="selection">
     <div class="selected-die" *ngFor="let die of staged_dice">{{die.text}}</div>
+    <button *ngIf="staged" ion-button (click)="roll()">Roll</button>
   </div>
+  <hr>
+  <h1 *ngIf="rolled">Results</h1>
+  <ul>
+    <li *ngFor="let roll of rolls">{{roll[1]}}</li>
+  </ul>
 </ion-content>
