@@ -25,6 +25,8 @@ export class ExplosiveDice implements Dice {
       last_roll = this.dice.roll();
       result += last_roll;
     }
+
+    return result;
   }
 }
 
