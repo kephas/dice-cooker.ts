@@ -1,3 +1,14 @@
 page-home {
+  #selection {
+    display: flex;
 
+    .selected-die {
+      width: 2em;
+      background:#F9EECF;
+      border: 2px solid black;
+      padding: .2em;
+      margin: .5em;
+      text-align: center;
+    }
+  }
 }
