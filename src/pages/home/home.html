@@ -8,9 +8,11 @@
 
 <ion-content padding>
   <h1>Available dice</h1>
-  <span class="button" *ngFor="let die of available_dice"><button ion-button (click)="stage(die)" [innerHTML]="die.markup"></button></span>
+  <div class="flex-container">
+    <div class="die-choice" *ngFor="let die of available_dice"><button ion-button (click)="stage(die)" [innerHTML]="die.markup"></button></div>
+  </div>
   <hr>
-  <div id="selection">
+  <div class="flex-container">
     <div class="selected-die" *ngFor="let die of staged_dice" [innerHTML]="die.markup"></div>
     <button *ngIf="staged" ion-button (click)="roll()">Roll</button>
   </div>
